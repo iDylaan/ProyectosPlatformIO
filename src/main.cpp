@@ -5,7 +5,7 @@
 #include <SPIFFS.h>
 
 const char *ssid = "Dani's network";
-const char *password = "kekojones123";
+const char *password = "kekojones1234";
 
 WebServer server(5252);
 
