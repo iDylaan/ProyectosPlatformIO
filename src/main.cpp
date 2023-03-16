@@ -2,6 +2,7 @@
 #include "ESPAsyncWebServer.h"
 #include "AsyncTCP.h"
 #include "SPIFFS.h"
+#include "string"
 
 // Replace with your network credentials
 const char *ssid = "Dani's Network";
@@ -61,9 +62,9 @@ void setup() {
   
 
   // Servimos los archivos estáticos que se encuentran en la carpeta "data"
-  server.serveStatic("/", SPIFFS, "/index.html");
-  server.serveStatic("/styles.css", SPIFFS, "/styles.css");
-  server.serveStatic("/script.js", SPIFFS, "/script.js");
+  // server.serveStatic("/", SPIFFS, "/index.html");
+  // server.serveStatic("/styles.css", SPIFFS, "/styles.css");
+  // server.serveStatic("/script.js", SPIFFS, "/script.js");
 
   // Route for root / web page
   server.on("/", HTTP_GET, [](AsyncWebServerRequest *request) {
@@ -78,9 +79,11 @@ void setup() {
   // Route to set GPIO to HIGH
   server.on("/led_r", HTTP_GET, [](AsyncWebServerRequest *request) {
     if (request->hasParam("value")) {
-      int value = request->getParam("value")->value();
+      String value = request->getParam("value")->value();
+      int brightness = value.toInt();
+      ledcWrite(ledCRed, brightness);
     }
-    ledcWrite(ledCRed, 255);
+
     request->send(SPIFFS, "/index.html", String(), false); 
   });
 
