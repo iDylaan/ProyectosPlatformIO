@@ -1,26 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESP32 Dani</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ESP32 Dani</title>
 
-    <link rel="icon" href="data:,">
-    <link type="text/css" rel="stylesheet" href="./styles.css">
-    <script type="text/javascript" src="./script.js" defer></script>
-</head>
+        <link rel="icon" href="#">
+        <link type="text/css" rel="stylesheet" href="./styles.css">
+        <script type="application/javascript" src="./script.js" defer></script>
+    </head>
 
-<body>
-    <main>
-        <p>R</p> 
-        <input type="range" id="led_r" min="0" max="255">   
-        <p>G</p> 
-        <input type="range" id="led_g" min="0" max="255">
-        <p>B</p> 
-        <input type="range" id="led_b" min="0" max="255">
-    </main>
-</body>
+    <body>
+        <section class="potenciometros__container">
+            <div><span>Potenciometro 1 ➔ </span>
+                <p class="pote-1"> ...</p>
+            </div> |
+            <div><span>Potenciometro 2 ➔ </span>
+                <p class="pote-2"> ...</p>
+            </div> |
+            <div><span>Potenciometro 3 ➔ </span>
+                <p class="pote-3"> ...</p>
+            </div>
+        </section>
+        <main>
+            <div class="led_r_container">
+                <span class="bg-r"></span>
+                <p>R</p>
+                <input type="range" id="led_r" min="0" max="255">
+            </div>
+            <div class="led_g_container">
+                <span class="bg-g"></span>
+                <p>G</p>
+                <input type="range" id="led_g" min="0" max="255">
+            </div>
+            <div class="led_b_container">
+                <span class="bg-b"></span>
+                <p>B</p>
+                <input type="range" id="led_b" min="0" max="255">
+            </div>
+        </main>
+    </body>
 
 </html>
