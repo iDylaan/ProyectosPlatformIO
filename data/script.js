@@ -7,7 +7,7 @@
     
     setInterval(() => {
         getPotes();
-    }, 3000);
+    }, 2000);
 
     inputRanges.forEach(range => {
         range.addEventListener("click", async () => {
